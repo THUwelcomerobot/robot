@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/robot/catkin_ws/src/wpb_home/wpb_home_tutorials/src/wpb_home_speech_recognition.cpp
+ros/ros.h
+-
+geometry_msgs/Twist.h
+-
+std_msgs/String.h
+-
+
