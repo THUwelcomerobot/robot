@@ -1,0 +1,182 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2590729365/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2590729365.dir/build.make CMakeFiles/cmTryCompileExec2590729365.dir/build
+make[1]: 正在进入目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2590729365.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2590729365.dir/CheckSymbolExists.c.o   -c /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2590729365
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2590729365.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec2590729365.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2590729365 -rdynamic 
+CMakeFiles/cmTryCompileExec2590729365.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+make[1]:正在离开目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2590729365] 错误 1
+make: *** [cmTryCompileExec2590729365/fast] 错误 2
+
+File /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3099450242/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3099450242.dir/build.make CMakeFiles/cmTryCompileExec3099450242.dir/build
+make[1]: 正在进入目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3099450242.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3099450242.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3099450242
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3099450242.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3099450242.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3099450242 -rdynamic -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]:正在离开目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec3099450242] 错误 1
+make: *** [cmTryCompileExec3099450242/fast] 错误 2
+
+
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1318137491/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1318137491.dir/build.make CMakeFiles/cmTryCompileExec1318137491.dir/build
+make[1]: 正在进入目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1318137491.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1318137491.dir/CheckSymbolExists.c.o   -c /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘CL_VERSION_2_0’ undeclared (first use in this function)
+   return ((int*)(&CL_VERSION_2_0))[argc];
+                   ^
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTryCompileExec1318137491.dir/CheckSymbolExists.c.o] 错误 1
+make[1]:正在离开目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1318137491/fast] 错误 2
+
+File /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include </usr/include/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3334038431/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3334038431.dir/build.make CMakeFiles/cmTryCompileExec3334038431.dir/build
+make[1]: 正在进入目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3334038431.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec3334038431.dir/CheckSymbolExists.cxx.o -c /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+make[1]:正在离开目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec3334038431.dir/CheckSymbolExists.cxx.o] 错误 1
+make: *** [cmTryCompileExec3334038431/fast] 错误 2
+
+File /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3592332282/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3592332282.dir/build.make CMakeFiles/cmTryCompileExec3592332282.dir/build
+make[1]: 正在进入目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3592332282.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec3592332282.dir/CheckSymbolExists.cxx.o -c /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+make[1]:正在离开目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec3592332282.dir/CheckSymbolExists.cxx.o] 错误 1
+make: *** [cmTryCompileExec3592332282/fast] 错误 2
+
+File /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2561550600/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2561550600.dir/build.make CMakeFiles/cmTryCompileExec2561550600.dir/build
+make[1]: 正在进入目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2561550600.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec2561550600.dir/CheckSymbolExists.cxx.o -c /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+make[1]:正在离开目录 `/home/robot/catkin_ws/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec2561550600.dir/CheckSymbolExists.cxx.o] 错误 1
+make: *** [cmTryCompileExec2561550600/fast] 错误 2
+
+File /home/robot/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

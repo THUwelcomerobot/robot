@@ -1,0 +1,2 @@
+iai_kinect2/iai_kinect2:iai_kinect2/kinect2_bridge:iai_kinect2/kinect2_calibration:iai_kinect2/kinect2_registration:iai_kinect2/kinect2_viewer:my_nav_package:my_vel_package:rplidar_ros:teleop_martin_keyboard:waterplus_map_tools:wpb_home/wpb_home_bringup:wpb_home/wpb_home_tutorials:wpb_home/wpbh_local_planner:wpb_home_apps_2017:xfyun_waterplus
+-DCATKIN_DEVEL_PREFIX=/home/robot/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/robot/catkin_ws/install -G Unix Makefiles
