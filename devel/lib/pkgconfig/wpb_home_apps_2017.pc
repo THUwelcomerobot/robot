@@ -1,8 +1,0 @@
-prefix=/home/robot/catkin_ws/devel
-
-Name: wpb_home_apps_2017
-Description: Description of wpb_home_apps_2017
-Version: 0.0.0
-Cflags: -I/home/robot/catkin_ws/src/wpb_home_apps_2017/include
-Libs: -L/home/robot/catkin_ws/devel/lib 
-Requires: message_runtime
