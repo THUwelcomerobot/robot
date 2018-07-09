@@ -29,17 +29,17 @@ class DetXRec(object):
 		# loading templates (src_pictures) as the fudicial marks
 		for template in self.templates:
 			filename = '/home/robot/face_image/'+template + ".png" 
-			try:			
-				image = face_recognition.load_image_file(filename)  
-			except IOError:
-				print('template photo not found')
-			else:
-				self.images.append(image) 
+			# try:			
+			image = face_recognition.load_image_file(filename)  
+			# except IOError:
+			# 	print('template photo not found')
+			# else:
+			self.images.append(image) 
 		#print(len(self.images))
 
       	# encoding src_pictures
 		for image in self.images:
-			encoding = face_recognition.face_encodings(image)[0]  			
+			encoding = face_recognition.face_encodings(image, num_jitters=10)[0]  			
 			self.face_encodings.append(encoding) 
 
 	def compare_faces(self, dest):
@@ -61,13 +61,12 @@ class DetXRec(object):
 		face_location = face_locations[0]      
 		top, right, bottom, left = face_location      
 		cv2.rectangle(unknown_image, (left, top), (right, bottom), (0, 255, 0), 2)      
-		results = face_recognition.compare_faces(self.face_encodings, unknown_encoding)
-			# print(len(self.face_encodings),len(unknown_face_encodings))
-			# print(len(self.images))
+		results = face_recognition.compare_faces(self.face_encodings, unknown_encoding, tolerance = 0.45)
+		print(results)
 			      
 		
 		try:
-			j = self.templates.index(True)
+			j = results.index(True)
 		# for j in range(len(results)):          
 		#	if results[j]==True:
 		except ValueError:
@@ -90,8 +89,8 @@ if __name__=='__main__':
 
 	templates = ['2016011417','2016011000','2016011493'] 
 	instance = DetXRec(templates) 
-	instance.compare_faces('/home/robot/face_image/unknown.png')
-	labeled_img = instance.display()
-	cv2.imshow("Output", labeled_img) 
-	cv2.waitKey(0)
+	instance.compare_faces('/home/robot/face_image/2016011000.png')
+	# labeled_img = instance.display()
+	# cv2.imshow("Output", labeled_img) 
+	# cv2.waitKey(0)
 	print(instance.whoIsThis())

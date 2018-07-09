@@ -1,0 +1,13 @@
+<launch>
+    <node name='xfyun_iat' type='iat_node' pkg='xfyun_waterplus'>
+        <param name='cn' type='bool' value='true'/>
+    </node>
+    <node pkg="wpb_home_bringup" type="wpb_home_core" name="wpb_home_core" output="screen">
+        <param name="serial_port" type="string" value="/dev/ftdi"/> 
+    </node>
+    <!--<node name='sound_rec_sub' pkg='xfyun_waterplus' type='sound_rec_sub.py' output='screen'/>-->
+    <!--<node name='messfromxb' pkg='xbchat' type='messfromxb.py' output='screen' />-->
+    <node name='messtoxb' pkg='xbchat' type='messtoxb.py' output='screen' />
+     <node pkg="xfyun_waterplus" type="tts_node" name="xfyun_tts_node" output='screen'/> 
+      <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" />
+</launch>

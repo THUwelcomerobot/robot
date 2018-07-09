@@ -122,7 +122,7 @@ int main(int argc, char* argv[])
 	ros::init(argc, argv, "xfyun_iat_node");
 
     ros::NodeHandle n;
-    iat_pub = n.advertise<std_msgs::String>("/xfyun/iat", 20);
+    iat_pub = n.advertise<std_msgs::String>("/xfyun/iat", 10);
     ros::ServiceServer start_svr = n.advertiseService("xfyun_waterplus/IATSwitch", iat_start);
 
 	ros::NodeHandle n_param("~");

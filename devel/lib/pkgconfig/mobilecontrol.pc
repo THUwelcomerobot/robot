@@ -1,0 +1,8 @@
+prefix=/home/robot/catkin_ws/devel
+
+Name: mobilecontrol
+Description: Description of mobilecontrol
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robot/catkin_ws/devel/lib 
+Requires: 
