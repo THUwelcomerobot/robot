@@ -3,7 +3,8 @@ project(waterplus_map_tools)
 
 find_package(catkin REQUIRED COMPONENTS message_generation rviz roscpp geometry_msgs std_msgs tf visualization_msgs move_base_msgs actionlib cmake_modules )
 
-add_service_files(FILES
+add_service_files(
+  FILES
   SaveWaypoints.srv
   AddNewWaypoint.srv
   GetNumOfWaypoints.srv
@@ -25,6 +26,7 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES waterplus_map_tools 
   DEPENDS TinyXML
+  
   )
 
 

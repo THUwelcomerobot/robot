@@ -119,4 +119,5 @@
   <!--<node pkg="wpb_home_tutorials" type="wpb_home_speak" name="wpb_home_speak" output="screen"/>-->
   <node name='face_compare' pkg='wpb_home_tutorials' type='face_compare.py' output='screen'/>
   <node name='name_boardcast' pkg='wpb_home_tutorials' type='name_boardcast.py' output='screen'/>
+  <!--<node name='kaichangbai' pkg='wpb_home_tutorials' type='kaichangbai.py' output='screen' />-->
 </launch>

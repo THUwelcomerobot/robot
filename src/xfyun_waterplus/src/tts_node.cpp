@@ -138,7 +138,7 @@ void tts_callback(const std_msgs::String::ConstPtr& msg)
     char cmd[2000];
     const char* text;
     int         ret                  = MSP_SUCCESS;
-    const char* session_begin_params = "voice_name = xiaoyan, text_encoding = utf8, sample_rate = 16000, speed = 50, volume = 50, pitch = 50, rdn = 2";
+    const char* session_begin_params = "voice_name = babyxu, text_encoding = utf8, sample_rate = 16000, speed = 40, volume = 50, pitch = 60, rdn = 2";
     const char* filename             = "/tmp/tts_result.wav"; //合成的语音文件名称
 
 

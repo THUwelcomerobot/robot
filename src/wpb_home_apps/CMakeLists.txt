@@ -278,6 +278,36 @@ target_link_libraries(home_test
   ${catkin_LIBRARIES}
 )
 
+add_executable(add_point_test
+  src/action_manager/action_manager.cpp
+  src/scripts/add_point.cpp
+  src/add_point_test.cpp
+)
+add_dependencies(add_point_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(add_point_test
+  ${catkin_LIBRARIES}
+)
+
+add_executable(goto_point_test
+  src/action_manager/action_manager.cpp
+  src/scripts/goto_point.cpp
+  src/goto_point_test.cpp
+)
+add_dependencies(goto_point_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(goto_point_test
+  ${catkin_LIBRARIES}
+)
+
+add_executable(take_photo_test
+  src/action_manager/action_manager.cpp
+  src/scripts/take_photo_script.cpp
+  src/take_photo_test.cpp
+)
+add_dependencies(take_photo_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(take_photo_test
+  ${catkin_LIBRARIES}
+)
+
 add_executable(entrance_detect
   src/entrance_detect.cpp
 )

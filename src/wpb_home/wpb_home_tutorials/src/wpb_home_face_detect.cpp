@@ -39,7 +39,7 @@
 
 
 #include <string>
-
+#include <iostream>
 #include <sensor_msgs/PointCloud2.h>
 #include <image_transport/image_transport.h>
 #include <cv_bridge/cv_bridge.h>
@@ -143,7 +143,7 @@ void callbackRGB(const sensor_msgs::ImageConstPtr& msg)
 
 	equalizeHist( frame_gray, frame_gray );
     //-- Detect faces
-	face_cascade.detectMultiScale( frame_gray, faces, 1.1, 9, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
+	face_cascade.detectMultiScale( frame_gray, faces, 1.1, 9, 0|CV_HAAR_SCALE_IMAGE, Size(50, 50) );
 
     //ROS_INFO("face = %d",faces.size());
     if(faces.size() > 0)
@@ -156,14 +156,16 @@ void callbackRGB(const sensor_msgs::ImageConstPtr& msg)
            
             face_ptr->image = face;
 
-            std::string save_name = "/home/robot/face_image/unknown.png" ;
-            // std::string save_name_ori = "/home/robot/face_image/" + boost::lexical_cast<std::string>(iter) + "_1o.png" ;
+            std::string save_name = "/home/robot/share/unknown.png" ;
+            std::string save_name_ori = "/home/robot/share/" + boost::lexical_cast<std::string>(iter) + "_1o.jpg" ;
             imwrite(save_name,face);
             std_msgs::String save_msg;
             save_msg.data="saved";
             face_save_flag.publish(save_msg);
              std::cout<<"save"<<std::endl;
-            // imwrite(save_name_ori,cv_ptr->image);
+             Mat smallimage;
+             cv::resize(cv_ptr->image,smallimage,cv::Size(),0.9,0.9);
+            imwrite(save_name_ori,smallimage);
             iter++;
         }
         cv_ptr->image = drawFacesRGB(cv_ptr->image);
@@ -278,6 +280,14 @@ int main(int argc, char **argv)
 
     tf_listener = new tf::TransformListener(); 
     ros::NodeHandle nh;
+    ros::Publisher spk_pub = nh.advertise<std_msgs::String>("/xfyun/tts", 20);
+    std_msgs::String strSpeak;
+    strSpeak.data = "你好！我是自动化系迎新机器人！让我看看你是谁,请你稍微退后一点，看着我的摄像头，我会给你拍个照,";
+    std::cout<<strSpeak.data<<std::endl;
+    spk_pub.publish(strSpeak);
+    usleep(1000*1000);
+    spk_pub.publish(strSpeak);    
+    // std::cout<<"##############"<<std::endl;
     ros::Subscriber rgb_sub = nh.subscribe(rgb_topic, 1 , callbackRGB);
     ros::Subscriber pc_sub = nh.subscribe(pc_topic, 1 , callbackPointCloud);
 
@@ -286,7 +296,6 @@ int main(int argc, char **argv)
     face_save_flag = nh.advertise<std_msgs::String>("face_saved",2);
     marker_pub = nh.advertise<visualization_msgs::Marker>("face_marker", 2);
     pc_pub = nh.advertise<sensor_msgs::PointCloud2>("face_pointcloud",1);
-
     ros::Rate loop_rate(30);
     while( ros::ok())
     {
