@@ -19,9 +19,12 @@ key_word_dict={
     '教室':'！进教室跟回家一样。唷呼，超喜欢在这里的',
     '学习':'!too simple!',
     '迎新':'！我就是迎新机器人，好期待见到新同学呢',
-    '计算机':'！我好想记得是被叫做贵系吧',
+    '计算机':'！是被叫做贵系吧',
     '北京大学':'！离世界一流大学还有一条街',
-    '清华大学':'！好喜欢清华园子的',
+    '清华大学':'！超级喜欢园子呢',
+    '学长':'学长又帅又厉害',
+    '学姐':'学姐超级漂亮',
+    
 }
 
 
@@ -158,5 +161,6 @@ mess_publisher.publish(startmsg)
 rospy.sleep(0.5)
 mess_publisher.publish(startmsg)
 ###
+print(startmsg)
 rospy.spin()
 # itchat_thread.join()
