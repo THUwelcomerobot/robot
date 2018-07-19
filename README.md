@@ -42,4 +42,20 @@ after SLAM done,run
 ```
  rosrun map_server map_saver -f map
 ```
-to save your map, and copy your **map.pgm**,**map.yaml** from **/home/robot** to **/home/robot/catkin_ws/src/wpb_home/wpb_home_tutorials/maps/** 
+to save your map, and copy your **map.pgm**,**map.yaml** from **[current dir]** to **catkin_ws/src/wpb_home/wpb_home_tutorials/maps/** 
+#### 4. SCripts
+all complex action scripts are in package **wpb_home_apps**
+run eg.
+```
+roslaunch wpb_home_apps add_point.launch  
+```
+or
+```
+roslaunch wpb_home_apps take_photo.launch 
+```
+#### 5. face detect
+run
+```
+roslaunch wpb_home_tutorials face_detect.launch 
+```
+the detected face image will be saved to a dir and you can change the path to your own.
