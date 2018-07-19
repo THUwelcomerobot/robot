@@ -282,7 +282,7 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
     ros::Publisher spk_pub = nh.advertise<std_msgs::String>("/xfyun/tts", 20);
     std_msgs::String strSpeak;
-    strSpeak.data = "你好！我是自动化系迎新机器人！让我看看你是谁,请你稍微退后一点，看着我的摄像头，我会给你拍个照,";
+    strSpeak.data = "!你好！我是自动化系迎新机器人！让我看看你是谁,请你稍微退后一点，看着我的摄像头，我会给你拍照,";
     std::cout<<strSpeak.data<<std::endl;
     spk_pub.publish(strSpeak);
     usleep(1000*1000);

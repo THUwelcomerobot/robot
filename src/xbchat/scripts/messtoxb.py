@@ -84,7 +84,7 @@ def att_reply1(msg):
 def messsend(msg):
     global username
     flag=False
-    print(type(msg.data))
+    # print(type(msg.data))
     for (cmd, x, y, z) in cmd_vel:
         if msg.data == cmd:
             flag=True
@@ -94,7 +94,7 @@ def messsend(msg):
     for key in key_word_dict:
         # key1 = key.decode('unicode_escape')
         mess = key_word_dict[key]
-        print(key,mess)        
+        # print(key,mess)        
         if msg.data.find(key)>=0:
             mess_publisher.publish(mess)
             print("okokokokokok")

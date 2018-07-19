@@ -33,12 +33,12 @@ void CAddPoint::Queue(){
     arAct.push_back(newAct);
 
     newAct.nAct = ACT_LISTEN;
-    newAct.strTarget = "这是老师办公室";
+    newAct.strTarget = "办公室";
     newAct.nDuration = 5;
     arAct.push_back(newAct);
 
     newAct.nAct = ACT_ADD_WAYPOINT;
-    newAct.strTarget = "老师办公室";
+    newAct.strTarget = "office";
     newAct.nDuration = 5;
     arAct.push_back(newAct);
 
@@ -48,18 +48,18 @@ void CAddPoint::Queue(){
     arAct.push_back(newAct);
 
     newAct.nAct = ACT_LISTEN;
-    newAct.strTarget = "这是教室";
+    newAct.strTarget = "教室";
     newAct.nDuration = 5;
     arAct.push_back(newAct);
 
     newAct.nAct = ACT_ADD_WAYPOINT;
-    newAct.strTarget = "教室";
+    newAct.strTarget = "classroom";
     newAct.nDuration = 5;
     arAct.push_back(newAct);
 
     newAct.nAct = ACT_SPEAK;
     newAct.strTarget = "我知道教室在这里了。这里面个个都是人才，说话又好听。";
-    newAct.nDuration = 5;
+    newAct.nDuration = 15;
     arAct.push_back(newAct);
 
     newAct.nAct = ACT_LISTEN;

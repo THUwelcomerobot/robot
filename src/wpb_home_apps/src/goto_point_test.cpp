@@ -62,7 +62,7 @@ void KeywordCB(const std_msgs::String::ConstPtr &msg)
 
     {
         std::cout << msg->data;
-        strListen.data = "办公室";
+        strListen.data = "office";
         std::cout << "@@@@@@@@@@@@@@@@@@@@@@";
         goto_point_script.Queue(strListen);
         goto_point_script.ShowActs();
@@ -71,7 +71,7 @@ void KeywordCB(const std_msgs::String::ConstPtr &msg)
     else if (msg->data.find("教") == 0)
     {
         std::cout << msg->data << std::endl;
-        strListen.data = "教室";
+        strListen.data = "classroom";
         std::cout << "$$$$$$$$$$$$$$$$$$$$" << strListen.data;
         goto_point_script.Queue(strListen);
         goto_point_script.ShowActs();

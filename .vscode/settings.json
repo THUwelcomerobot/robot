@@ -12,6 +12,9 @@
         "cwchar": "cpp",
         "cwctype": "cpp",
         "cstdint": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "*.ipp": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp"
     }
 }

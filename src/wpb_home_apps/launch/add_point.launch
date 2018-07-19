@@ -108,6 +108,6 @@
     </node>
 
     <!-- Run script -->
-    <node pkg="wpb_home_apps" type="add_point" name="add_point" output="screen"/>
+    <node pkg="wpb_home_apps" type="add_point_test" name="add_point_test" output="screen"/>
 
 </launch>
