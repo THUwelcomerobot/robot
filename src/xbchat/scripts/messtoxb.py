@@ -18,6 +18,13 @@ key_word_dict={
     '钱':'！有钱真的可以为所欲为',
     '教室':'！进教室跟回家一样。唷呼，超喜欢在这里的',
     '学习':'!too simple!',
+    '迎新':'！我就是迎新机器人，好期待见到新同学呢',
+    '计算机':'！是被叫做贵系吧',
+    '北京大学':'！离世界一流大学还有一条街',
+    '清华大学':'！超级喜欢园子呢',
+    '学长':'学长又帅又厉害',
+    '学姐':'学姐超级漂亮',
+    
 }
 
 
@@ -32,13 +39,14 @@ cmd_vel_linear = 0.2
 cmd_vel_angular = 0.2
 # cmd_vel
 cmd_vel = [
-    ('向前走', cmd_vel_linear, 0, 0),
-    ('向后退', -cmd_vel_linear, 0, 0),
-    ('向左移', 0, cmd_vel_linear, 0),
-    ('向右移', 0, -cmd_vel_linear, 0),
-    ('向左转', 0, 0, cmd_vel_angular),
-    ('向右转', 0, 0, -cmd_vel_angular),
-    ('停下来', 0, 0, 0),
+    ('前进', cmd_vel_linear, 0, 0),
+    ('前走', cmd_vel_linear, 0, 0),
+    ('后退', -cmd_vel_linear, 0, 0),
+    ('左移', 0, cmd_vel_linear, 0),
+    ('右移', 0, -cmd_vel_linear, 0),
+    ('左转', 0, 0, cmd_vel_angular),
+    ('右转', 0, 0, -cmd_vel_angular),
+    ('停', 0, 0, 0),
 ]
 #
 # cmd_twist
@@ -86,7 +94,7 @@ def messsend(msg):
     flag=False
     # print(type(msg.data))
     for (cmd, x, y, z) in cmd_vel:
-        if msg.data == cmd:
+        if msg.data.find(cmd):
             flag=True
             print(cmd)
             cmd_move(x, y, z)
@@ -147,5 +155,12 @@ itchat.run(blockThread=False)
 # itchat_thread=threading.Thread(target=itchat.run())
 # itchat_thread.start()
 print('####')
+###
+startmsg='！我准备好开始聊天啦，可以问问我今天天气哦'
+mess_publisher.publish(startmsg)
+rospy.sleep(0.5)
+mess_publisher.publish(startmsg)
+###
+print(startmsg)
 rospy.spin()
 # itchat_thread.join()
