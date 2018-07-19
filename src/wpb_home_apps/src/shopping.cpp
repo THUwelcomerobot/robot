@@ -313,7 +313,7 @@ int main(int argc, char** argv)
             {
                FollowSwitch(true, 0.7);
             }
-            nDelay ++;
+            // nDelay ++;
         }
 
         // 3、询问要去哪个航点
